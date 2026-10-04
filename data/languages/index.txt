@@ -194,3 +194,10 @@ ukrainian
 == Українська
 == 804
 == uk
+
+CMTRY=CMTRY
+Tater Client=Tater Client
+Aimbot=Aimbot
+Misc=Misc
+Avoid=Avoid
+Bind=Bind

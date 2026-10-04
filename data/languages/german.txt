@@ -2708,3 +2708,10 @@ Join
 
 Press '%s' to show cursor.
 == 
+
+CMTRY=CMTRY
+Tater Client=Tater Client
+Aimbot=Aimbot
+Misc=Misc
+Avoid=Avoid
+Bind=Bind

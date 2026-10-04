@@ -2708,3 +2708,10 @@ Spree
 
 Best
 == 
+
+CMTRY=CMTRY
+Tater Client=Tater Client
+Aimbot=Aimbot
+Misc=Misc
+Avoid=Avoid
+Bind=Bind

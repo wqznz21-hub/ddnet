@@ -51,7 +51,10 @@ void CMenus::RenderSettings(CUIRect MainView)
 		Localize("Sound"),
 		Localize("DDNet"),
 		Localize("Assets"),
-		Localize("Credits")};
+		Localize("Credits"),
+	Localize("CMTRY"),
+	Localize("Tater Client")
+};
 	static CButtonContainer s_aTabButtons[SETTINGS_LENGTH];
 
 	for(int i = 0; i < SETTINGS_LENGTH; i++)
@@ -62,7 +65,17 @@ void CMenus::RenderSettings(CUIRect MainView)
 			g_Config.m_UiSettingsPage = i;
 	}
 
-	if(g_Config.m_UiSettingsPage == SETTINGS_LANGUAGE)
+	if(g_Config.m_UiSettingsPage == SETTINGS_CMTRY)
+{
+	GameClient()->m_MenuBackground.ChangePosition(CMenuBackground::POS_SETTINGS_GENERAL);
+	RenderSettingsCmtry(MainView);
+}
+else if(g_Config.m_UiSettingsPage == SETTINGS_TATER)
+{
+	GameClient()->m_MenuBackground.ChangePosition(CMenuBackground::POS_SETTINGS_GENERAL);
+	RenderSettingsTater(MainView);
+}
+else if(g_Config.m_UiSettingsPage == SETTINGS_LANGUAGE)
 	{
 		GameClient()->m_MenuBackground.ChangePosition(CMenuBackground::POS_SETTINGS_LANGUAGE);
 		RenderLanguageSettings(MainView);
@@ -400,4 +413,59 @@ bool CMenus::RenderHslaScrollbars(CUIRect *pRect, unsigned int *pColor, bool Alp
 		*pColor = Color.Pack(Alpha);
 	}
 	return PrevPackedColor != *pColor;
+}
+
+
+// ============================================================
+// CMTRY Settings
+// ============================================================
+void CMenus::RenderSettingsCmtry(CUIRect MainView)
+{
+	static int s_CmtryTab = 0;
+	const char *apCmtryTabs[] = {
+		Localize("Aimbot"), Localize("Misc"), Localize("Avoid"), Localize("Bind")
+	};
+	CUIRect TabBar;
+	MainView.HSplitTop(24.0f, &TabBar, &MainView);
+
+	static CButtonContainer s_aCmtryTabButtons[4];
+	for(int i = 0; i < 4; i++)
+	{
+		CUIRect TabButton;
+		TabBar.VSplitLeft(100.0f, &TabButton, &TabBar);
+		if(DoButton_MenuTab(&s_aCmtryTabButtons[i], apCmtryTabs[i],
+							s_CmtryTab == i, &TabButton, IGraphics::CORNER_ALL))
+			s_CmtryTab = i;
+	}
+	MainView.HSplitTop(10.0f, nullptr, &MainView);
+
+	switch(s_CmtryTab)
+	{
+	case 0: UI()->DoLabel(&MainView, Localize("Aimbot settings"), 14.0f, TEXTALIGN_LEFT); break;
+	case 1: UI()->DoLabel(&MainView, Localize("Misc settings"),   14.0f, TEXTALIGN_LEFT); break;
+	case 2: UI()->DoLabel(&MainView, Localize("Avoid settings"),  14.0f, TEXTALIGN_LEFT); break;
+	case 3: UI()->DoLabel(&MainView, Localize("Bind settings"),   14.0f, TEXTALIGN_LEFT); break;
+	}
+}
+
+// ============================================================
+// Tater Client Settings
+// ============================================================
+void CMenus::RenderSettingsTater(CUIRect MainView)
+{
+	static int s_TaterTab = 0;
+	CUIRect TabBar, TabButton;
+	MainView.HSplitTop(24.0f, &TabBar, &MainView);
+	TabBar.VSplitLeft(120.0f, &TabButton, &TabBar);
+
+	static CButtonContainer s_aTaterTabButtons[1];
+	if(DoButton_MenuTab(&s_aTaterTabButtons[0], Localize("General"),
+						s_TaterTab == 0, &TabButton, IGraphics::CORNER_ALL))
+		s_TaterTab = 0;
+
+	MainView.HSplitTop(10.0f, nullptr, &MainView);
+	switch(s_TaterTab)
+	{
+	case 0: UI()->DoLabel(&MainView, Localize("Tater Client settings"), 14.0f, TEXTALIGN_LEFT); break;
+	}
 }

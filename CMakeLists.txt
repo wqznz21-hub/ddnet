@@ -206,8 +206,8 @@ if(NOT "${CMAKE_CURRENT_BINARY_DIR}" STREQUAL "${CMAKE_CURRENT_SOURCE_DIR}")
   file(REMOVE ${CMAKE_CURRENT_BINARY_DIR}/src/game/version.h)
 endif()
 
-set(SERVER_EXECUTABLE DDNet-Server CACHE STRING "Name of the built server executable")
-set(CLIENT_EXECUTABLE DDNet CACHE STRING "Name of the build client executable")
+set(SERVER_EXECUTABLE cmtry-server CACHE STRING "Name of the built server executable")
+set(CLIENT_EXECUTABLE cmtry CACHE STRING "Name of the build client executable")
 set(IOS_BUNDLE_IDENTIFIER "org.ddnet.client" CACHE STRING "iOS bundle identifier")
 
 ########################################################################

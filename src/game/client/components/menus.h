@@ -565,6 +565,8 @@ protected:
 
 	// found in menus_settings_assets.cpp
 	void RenderSettingsAssets(CUIRect MainView);
+	void RenderSettingsCmtry(CUIRect MainView);
+	void RenderSettingsTater(CUIRect MainView);
 
 	// found in menus_settings_appearance.cpp
 	void RenderSettingsAppearance(CUIRect MainView);
@@ -717,7 +719,9 @@ public:
 		SETTINGS_ASSETS,
 		SETTINGS_CREDITS,
 
-		SETTINGS_LENGTH,
+		SETTINGS_CMTRY,
+	SETTINGS_TATER,
+	SETTINGS_LENGTH,
 	};
 
 	enum

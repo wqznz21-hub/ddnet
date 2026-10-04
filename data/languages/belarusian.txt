@@ -2708,3 +2708,10 @@ Unmute emoticons
 
 Mute emoticons
 == 
+
+CMTRY=CMTRY
+Tater Client=Tater Client
+Aimbot=Aimbot
+Misc=Misc
+Avoid=Avoid
+Bind=Bind

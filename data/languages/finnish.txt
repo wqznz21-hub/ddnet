@@ -2708,3 +2708,10 @@ Active: Hook
 
 https://wiki.ddnet.org/wiki/Mapping
 == 
+
+CMTRY=CMTRY
+Tater Client=Tater Client
+Aimbot=Aimbot
+Misc=Misc
+Avoid=Avoid
+Bind=Bind

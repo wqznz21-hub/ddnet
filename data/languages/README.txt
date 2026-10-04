@@ -9,3 +9,10 @@ Link to Weblate documentation: https://docs.weblate.org/en/latest/index.html
 
 To suggest adding translation for another language: open an Issue on GitHub.
 Link to DDNet issue tracker on GitHub: https://github.com/ddnet/ddnet/issues
+
+CMTRY=CMTRY
+Tater Client=Tater Client
+Aimbot=Aimbot
+Misc=Misc
+Avoid=Avoid
+Bind=Bind
